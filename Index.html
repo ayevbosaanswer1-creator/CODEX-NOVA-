@@ -1,0 +1,3510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CodexNova.Dev — Digital Experiences</title>
+
+<meta name="description"
+content="CodexNova.Dev creates premium websites, web applications, AI solutions and digital experiences.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+    --bg: #050505;
+    --bg2: #0a0a0a;
+    --card: rgba(255,255,255,.045);
+    --border: rgba(255,255,255,.10);
+
+    --white: #fff;
+    --muted: #888;
+
+    --purple: #8b5cf6;
+    --orange: #ff8a3d;
+    --green: #45e6a5;
+
+    --radius: 24px;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background-orb {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: .12;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.orb-one {
+    background: var(--purple);
+    top: -250px;
+    left: -200px;
+}
+
+.orb-two {
+    background: var(--orange);
+    right: -250px;
+    top: 45%;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(5,5,5,.72);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255,255,255,.05);
+
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.logo-mark {
+    color: var(--purple);
+}
+
+.dot {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    gap: 34px;
+}
+
+.nav-links a {
+    color: #aaa;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-button {
+    padding: 12px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 100px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: white;
+    color: black;
+}
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 150px 7% 100px;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 100px;
+
+    color: #aaa;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 15px var(--green);
+}
+
+.hero h1 {
+    max-width: 760px;
+
+    margin-top: 25px;
+
+    font-size: clamp(50px,7vw,92px);
+
+    line-height: .98;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    margin-top: 28px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 15px 22px;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.primary-button {
+    background: white;
+    color: black;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(255,255,255,.15);
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    background: rgba(255,255,255,.08);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+
+    margin-top: 65px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.hero-stats strong {
+    font-size: 25px;
+}
+
+.hero-stats span {
+    color: #777;
+    font-size: 11px;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 530px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-card {
+    width: min(480px,90%);
+
+    padding: 25px;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter: blur(30px);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.5);
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform:
+            perspective(1000px)
+            rotateY(-8deg)
+            rotateX(5deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            perspective(1000px)
+            rotateY(-8deg)
+            rotateX(5deg)
+            translateY(-15px);
+    }
+}
+
+.card-top,
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.card-top span:first-child {
+    color: white;
+    font-weight: 800;
+}
+
+.card-top span:first-child span {
+    color: var(--purple);
+}
+
+.code-window {
+    min-height: 310px;
+
+    margin: 25px 0;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #050505;
+
+    border: 1px solid rgba(255,255,255,.05);
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.code-line {
+    color: #777;
+}
+
+.indent {
+    padding-left: 25px;
+}
+
+.purple {
+    color: #b58aff;
+}
+
+.orange {
+    color: #ff9d63;
+}
+
+.green {
+    color: #54e8a9;
+}
+
+.white {
+    color: white;
+}
+
+.loading-bar {
+    width: 160px;
+    height: 3px;
+
+    background: #222;
+
+    overflow: hidden;
+}
+
+.loading-bar i {
+    display: block;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--orange)
+        );
+}
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: rgba(15,15,15,.75);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4);
+
+    animation: floatSmall 4s ease-in-out infinite;
+}
+
+.floating-card > span {
+    color: var(--purple);
+    font-size: 20px;
+}
+
+.floating-card strong {
+    display: block;
+    font-size: 11px;
+}
+
+.floating-card small {
+    color: #777;
+    font-size: 9px;
+}
+
+.floating-one {
+    left: 0;
+    top: 25%;
+}
+
+.floating-two {
+    right: 0;
+    bottom: 20%;
+
+    animation-delay: 1s;
+}
+
+@keyframes floatSmall {
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    padding: 140px 7%;
+}
+
+.section-heading {
+    max-width: 750px;
+
+    margin-bottom: 70px;
+}
+
+.section-number {
+    color: var(--purple);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-inner h2 {
+
+    margin-top: 18px;
+
+    font-size: clamp(38px,5vw,65px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+}
+
+.section-heading h2 span,
+.about-content h2 span,
+.contact-inner h2 span {
+    color: #666;
+}
+
+.section-heading p {
+
+    max-width: 600px;
+
+    margin-top: 22px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.center {
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.service-card {
+
+    min-height: 340px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+
+    transition: .4s;
+}
+
+.service-card:hover {
+
+    background: rgba(255,255,255,.04);
+
+    transform: translateY(-5px);
+}
+
+.service-icon {
+
+    color: var(--purple);
+
+    font-size: 30px;
+}
+
+.service-number {
+
+    position: absolute;
+
+    right: 25px;
+    top: 30px;
+
+    color: #444;
+
+    font-size: 11px;
+}
+
+.service-card h3 {
+
+    margin-top: 70px;
+
+    font-size: 21px;
+}
+
+.service-card p {
+
+    margin-top: 15px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.service-card a {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   WORK
+========================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--card);
+}
+
+.project-large {
+    grid-column: span 2;
+}
+
+.project-preview {
+
+    height: 430px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.project-one {
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #ff8a3d,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #171717,
+            #070707
+        );
+}
+
+.project-two {
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #6d4aff,
+            transparent 35%
+        ),
+        #080808;
+}
+
+.project-three {
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #ff6a3d,
+            transparent 30%
+        ),
+        #080808;
+}
+
+.preview-content {
+
+    position: absolute;
+
+    left: 45px;
+    bottom: 45px;
+}
+
+.preview-content small {
+
+    color: #aaa;
+
+    letter-spacing: 2px;
+}
+
+.preview-content h3 {
+
+    margin: 15px 0;
+
+    font-size: 55px;
+
+    line-height: .9;
+}
+
+.preview-content button {
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 100px;
+
+    background: white;
+
+    font-size: 11px;
+}
+
+.dashboard-preview {
+
+    width: 75%;
+    height: 70%;
+
+    position: absolute;
+
+    top: 15%;
+    left: 12.5%;
+
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr;
+
+    gap: 15px;
+
+    background: rgba(255,255,255,.07);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 20px;
+
+    transform: rotate(-4deg);
+}
+
+.dashboard-preview div {
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.dashboard-preview div:first-child {
+    grid-row: span 2;
+}
+
+.ai-circle {
+
+    width: 150px;
+    height: 150px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,130,70,.5),
+            rgba(100,40,20,.1)
+        );
+
+    box-shadow:
+        0 0 100px rgba(255,100,50,.3);
+
+    font-size: 40px;
+
+    font-weight: 900;
+}
+
+.project-info {
+
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.project-info h3 {
+    font-size: 15px;
+}
+
+.project-info p {
+
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-section {
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.about-visual {
+
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.about-circle {
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #7b54ff,
+            #17101f 55%,
+            #080808
+        );
+
+    box-shadow:
+        0 0 100px rgba(120,80,255,.2),
+        inset 0 0 50px rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    font-size: 60px;
+
+    font-weight: 900;
+}
+
+.about-content > p {
+
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #888;
+
+    line-height: 1.8;
+}
+
+.about-list {
+
+    margin-top: 45px;
+
+    border-top: 1px solid var(--border);
+}
+
+.about-list div {
+
+    padding: 18px 0;
+
+    display: flex;
+
+    gap: 30px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.about-list span {
+
+    color: var(--purple);
+
+    font-size: 11px;
+}
+
+.about-list strong {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PRICING
+========================================= */
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.price-card {
+
+    position: relative;
+
+    padding: 35px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: var(--card);
+
+    transition: .3s;
+}
+
+.price-card:hover {
+
+    transform: translateY(-8px);
+}
+
+.price-card.featured {
+
+    border-color:
+        rgba(139,92,246,.5);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,92,246,.13),
+            rgba(255,255,255,.03)
+        );
+}
+
+.popular {
+
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    padding: 6px 10px;
+
+    background: var(--purple);
+
+    border-radius: 100px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+.price-label {
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.price-card h3 {
+
+    margin-top: 20px;
+
+    font-size: 22px;
+}
+
+.price {
+
+    margin: 20px 0 10px;
+
+    font-size: 40px;
+
+    font-weight: 800;
+}
+
+.price-card > p {
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+.price-card ul {
+
+    list-style: none;
+
+    margin: 30px 0;
+}
+
+.price-card li {
+
+    padding: 10px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.05);
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+.price-card > a {
+
+    display: block;
+
+    padding: 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 100px;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.featured > a {
+
+    background: white;
+
+    color: black;
+}
+
+.payment-note {
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.payment-note div {
+    text-align: center;
+}
+
+.payment-note strong {
+
+    display: block;
+
+    font-size: 30px;
+}
+
+.payment-note span {
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq-container {
+
+    max-width: 850px;
+}
+
+.faq-item {
+
+    border-top:
+        1px solid var(--border);
+}
+
+.faq-item:last-child {
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.faq-question {
+
+    width: 100%;
+
+    padding: 25px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    text-align: left;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.faq-question span {
+
+    color: #777;
+
+    font-size: 20px;
+
+    transition: .3s;
+}
+
+.faq-answer {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height .4s ease;
+}
+
+.faq-answer p {
+
+    padding-bottom: 25px;
+
+    max-width: 650px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.faq-item.active
+.faq-question span {
+
+    transform:
+        rotate(45deg);
+
+    color: white;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+
+    padding: 140px 7%;
+
+    border-top:
+        1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(139,92,246,.12),
+            transparent 45%
+        );
+}
+
+.contact-inner {
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.contact-inner > p {
+
+    margin-top: 25px;
+
+    max-width: 600px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+form {
+
+    margin-top: 60px;
+}
+
+.input-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+.input-group {
+
+    margin-bottom: 22px;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.03);
+
+    color: white;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.input-group textarea {
+
+    resize: vertical;
+}
+
+.input-group select option {
+
+    background: #111;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+
+    border-color:
+        var(--purple);
+
+    box-shadow:
+        0 0 20px rgba(139,92,246,.1);
+}
+
+.submit-button {
+
+    padding: 16px 25px;
+
+    border: none;
+
+    border-radius: 100px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.submit-button:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding:
+        70px 7% 30px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.footer-main {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 60px;
+}
+
+.footer-brand p {
+
+    max-width: 300px;
+
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.footer-links {
+
+    display: flex;
+
+    gap: 100px;
+}
+
+.footer-links div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-links h4 {
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+}
+
+.footer-links a {
+
+    color: #666;
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+.footer-links a:hover {
+
+    color: white;
+}
+
+.footer-bottom {
+
+    margin-top: 70px;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid var(--border);
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 15px 20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #151515;
+
+    color: white;
+
+    font-size: 12px;
+
+    transform:
+        translateY(100px);
+
+    opacity: 0;
+
+    transition: .4s;
+
+    z-index: 2000;
+}
+
+.toast.show {
+
+    transform:
+        translateY(0);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1000px) {
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        background:
+            rgba(5,5,5,.96);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .about-section {
+
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media(max-width:650px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .hero {
+
+        padding:
+            130px 5% 70px;
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+
+        text-align: center;
+    }
+
+    .hero-stats {
+
+        gap: 20px;
+
+        justify-content:
+            space-between;
+    }
+
+    .hero-stats strong {
+
+        font-size: 20px;
+    }
+
+    .hero-stats span {
+
+        font-size: 9px;
+    }
+
+    .section {
+
+        padding:
+            90px 5%;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-inner h2 {
+
+        letter-spacing: -2px;
+    }
+
+    .services-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .project-large {
+
+        grid-column:
+            span 1;
+    }
+
+    .project-preview {
+
+        height: 320px;
+    }
+
+    .preview-content h3 {
+
+        font-size: 40px;
+    }
+
+    .about-circle {
+
+        width: 250px;
+        height: 250px;
+    }
+
+    .payment-note {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .input-row {
+
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main {
+
+        flex-direction: column;
+    }
+
+    .footer-links {
+
+        gap: 50px;
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background-orb orb-one"></div>
+<div class="background-orb orb-two"></div>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+
+        <span class="logo-mark">
+            &lt;/&gt;
+        </span>
+
+        <span>
+            CodexNova<span class="dot">.</span>Dev
+        </span>
+
+    </a>
+
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#work">
+            Work
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#pricing">
+            Pricing
+        </a>
+
+        <a href="#faq">
+            FAQ
+        </a>
+
+    </nav>
+
+
+    <a
+        href="#contact"
+        class="nav-button"
+    >
+        Start a Project →
+    </a>
+
+
+    <button
+        class="menu-button"
+        id="menuButton"
+    >
+        ☰
+    </button>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+
+            <span class="status-dot"></span>
+
+            DIGITAL EXPERIENCES, REIMAGINED
+
+        </div>
+
+
+        <h1>
+
+            We build
+
+            <span>
+                digital
+            </span>
+
+            experiences that matter.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            CodexNova.Dev creates premium websites,
+            applications and digital products designed
+            to make brands stand out.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="primary-button"
+            >
+                Start a Project
+                <span>↗</span>
+            </a>
+
+
+            <a
+                href="#work"
+                class="secondary-button"
+            >
+                Explore Our Work
+            </a>
+
+        </div>
+
+
+        <div class="hero-stats">
+
+            <div>
+
+                <strong>
+                    20+
+                </strong>
+
+                <span>
+                    Projects Built
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    100%
+                </strong>
+
+                <span>
+                    Custom Solutions
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Digital Mindset
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="glass-card main-card">
+
+            <div class="card-top">
+
+                <span>
+                    CODEX<span>NOVA</span>
+                </span>
+
+                <span>
+                    01 / 04
+                </span>
+
+            </div>
+
+
+            <div class="code-window">
+
+                <div class="code-line">
+
+                    <span class="purple">
+                        const
+                    </span>
+
+                    <span class="white">
+                        future
+                    </span>
+
+                    <span>
+                        =
+                    </span>
+
+                    <span class="orange">
+                        create
+                    </span>
+
+                    <span>
+                        (
+                    </span>
+
+                </div>
+
+
+                <div class="code-line indent">
+
+                    <span class="green">
+                        "something extraordinary"
+                    </span>
+
+                </div>
+
+
+                <div class="code-line">
+
+                    <span>
+                        )
+                    </span>
+
+                </div>
+
+
+                <div class="code-line">
+
+                    <span class="purple">
+                        await
+                    </span>
+
+                    <span class="white">
+                        launch
+                    </span>
+
+                    <span>
+                        (future);
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-footer">
+
+                <span>
+                    BUILD
+                </span>
+
+                <span class="loading-bar">
+                    <i></i>
+                </span>
+
+                <span>
+                    100%
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-one">
+
+            <span>
+                ✦
+            </span>
+
+            <div>
+
+                <strong>
+                    Premium UI
+                </strong>
+
+                <small>
+                    Designed with purpose
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-card floating-two">
+
+            <span>
+                ◉
+            </span>
+
+            <div>
+
+                <strong>
+                    Fast & Responsive
+                </strong>
+
+                <small>
+                    Built for every screen
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            01 / SERVICES
+        </span>
+
+
+        <h2>
+
+            Everything you need
+
+            <span>
+                to go digital.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            From concept to deployment,
+            we create digital products
+            engineered for performance
+            and designed for impact.
+
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                ◈
+            </div>
+
+            <span class="service-number">
+                01
+            </span>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+                Modern, responsive and
+                high-performance websites
+                built around your brand
+                and business goals.
+            </p>
+
+            <a href="#contact">
+                Explore →
+            </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                ⌘
+            </div>
+
+            <span class="service-number">
+                02
+            </span>
+
+            <h3>
+                Web Applications
+            </h3>
+
+            <p>
+                Powerful full-stack applications
+                with authentication, databases,
+                dashboards and intelligent
+                functionality.
+            </p>
+
+            <a href="#contact">
+                Explore →
+            </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                ✦
+            </div>
+
+            <span class="service-number">
+                03
+            </span>
+
+            <h3>
+                UI / UX Design
+            </h3>
+
+            <p>
+                Clean, premium interfaces
+                that combine visual identity
+                with intuitive user experiences.
+            </p>
+
+            <a href="#contact">
+                Explore →
+            </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                ◎
+            </div>
+
+            <span class="service-number">
+                04
+            </span>
+
+            <h3>
+                AI Solutions
+            </h3>
+
+            <p>
+                Intelligent AI-powered
+                experiences designed to
+                automate workflows and
+                improve productivity.
+            </p>
+
+            <a href="#contact">
+                Explore →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WORK
+========================================= -->
+
+<section
+    class="section"
+    id="work"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            02 / SELECTED WORK
+        </span>
+
+        <h2>
+
+            Ideas turned into
+
+            <span>
+                experiences.
+            </span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <article class="project-card project-large">
+
+            <div class="project-preview project-one">
+
+                <div class="preview-content">
+
+                    <small>
+                        ESTHY'S WORLD
+                    </small>
+
+                    <h3>
+                        Luxury<br>
+                        Fashion.
+                    </h3>
+
+                    <button>
+                        Explore Collection →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <div>
+
+                    <h3>
+                        ESTHY'S WORLD
+                    </h3>
+
+                    <p>
+                        Luxury E-commerce Experience
+                    </p>
+
+                </div>
+
+                <span>
+                    ↗
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-preview project-two">
+
+                <div class="dashboard-preview">
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <div>
+
+                    <h3>
+                        VEYRA
+                    </h3>
+
+                    <p>
+                        Personal Intelligence Platform
+                    </p>
+
+                </div>
+
+                <span>
+                    ↗
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+            <div class="project-preview project-three">
+
+                <div class="ai-circle">
+                    AI
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <div>
+
+                    <h3>
+                        CODEXNOVA AI
+                    </h3>
+
+                    <p>
+                        AI Assistant Platform
+                    </p>
+
+                </div>
+
+                <span>
+                    ↗
+                </span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section
+    class="section about-section"
+    id="about"
+>
+
+
+    <div class="about-visual">
+
+        <div class="about-circle">
+
+            &lt;/&gt;
+
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <span class="section-number">
+            03 / ABOUT CODEXNOVA
+        </span>
+
+
+        <h2>
+
+            Young minds.
+
+            <span>
+                Big ideas.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            CodexNova.Dev is a technology
+            brand focused on building modern
+            digital experiences for ambitious
+            people and businesses.
+
+        </p>
+
+
+        <p>
+
+            We believe technology should not
+            only work well. It should feel
+            extraordinary.
+
+        </p>
+
+
+        <div class="about-list">
+
+            <div>
+
+                <span>
+                    01
+                </span>
+
+                <strong>
+                    Innovation first
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    02
+                </span>
+
+                <strong>
+                    Design obsessed
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    03
+                </span>
+
+                <strong>
+                    Performance driven
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PRICING
+========================================= -->
+
+<section
+    class="section pricing-section"
+    id="pricing"
+>
+
+    <div class="section-heading center">
+
+        <span class="section-number">
+            04 / PRICING
+        </span>
+
+
+        <h2>
+
+            Simple pricing.
+
+            <span>
+                Serious results.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Choose the package that fits
+            your project.
+
+        </p>
+
+    </div>
+
+
+    <div class="pricing-grid">
+
+
+        <article class="price-card">
+
+            <span class="price-label">
+                STARTER
+            </span>
+
+            <h3>
+                Basic Website
+            </h3>
+
+            <div class="price">
+                ₦150k
+            </div>
+
+            <p>
+                For individuals and
+                small businesses.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✓ Up to 5 pages
+                </li>
+
+                <li>
+                    ✓ Responsive design
+                </li>
+
+                <li>
+                    ✓ Contact integration
+                </li>
+
+                <li>
+                    ✓ Basic SEO
+                </li>
+
+                <li>
+                    ✓ Deployment
+                </li>
+
+            </ul>
+
+
+            <a href="#contact">
+                Get Started →
+            </a>
+
+        </article>
+
+
+        <article
+            class="price-card featured"
+        >
+
+            <div class="popular">
+                MOST POPULAR
+            </div>
+
+            <span class="price-label">
+                PRO
+            </span>
+
+            <h3>
+                Premium Website
+            </h3>
+
+            <div class="price">
+                ₦300k
+            </div>
+
+            <p>
+                For brands that want
+                to stand out.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✓ Everything in Starter
+                </li>
+
+                <li>
+                    ✓ Premium UI / UX
+                </li>
+
+                <li>
+                    ✓ Advanced animations
+                </li>
+
+                <li>
+                    ✓ CMS / Database
+                </li>
+
+                <li>
+                    ✓ Advanced SEO
+                </li>
+
+                <li>
+                    ✓ Performance optimization
+                </li>
+
+            </ul>
+
+
+            <a href="#contact">
+                Start Project →
+            </a>
+
+        </article>
+
+
+        <article class="price-card">
+
+            <span class="price-label">
+                CUSTOM
+            </span>
+
+            <h3>
+                Web Application
+            </h3>
+
+            <div class="price">
+                Let's Talk
+            </div>
+
+            <p>
+                For complex digital products.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    ✓ Full-stack development
+                </li>
+
+                <li>
+                    ✓ Authentication
+                </li>
+
+                <li>
+                    ✓ Database
+                </li>
+
+                <li>
+                    ✓ Admin dashboard
+                </li>
+
+                <li>
+                    ✓ APIs & integrations
+                </li>
+
+                <li>
+                    ✓ Custom functionality
+                </li>
+
+            </ul>
+
+
+            <a href="#contact">
+                Request Quote →
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <div class="payment-note">
+
+        <div>
+
+            <strong>
+                50%
+            </strong>
+
+            <span>
+                Upfront
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                30%
+            </strong>
+
+            <span>
+                Working Prototype
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                20%
+            </strong>
+
+            <span>
+                Final Delivery
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<section
+    class="section faq-section"
+    id="faq"
+>
+
+    <div class="section-heading">
+
+        <span class="section-number">
+            05 / FAQ
+        </span>
+
+        <h2>
+
+            Frequently asked
+
+            <span>
+                questions.
+            </span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                How long does a website take?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+
+                    Most websites take between
+                    1–4 weeks depending on their
+                    complexity, content and
+                    required features.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Do you build full-stack applications?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+
+                    Yes. Full-stack projects can
+                    include frontend, backend,
+                    databases, authentication,
+                    APIs and dashboards.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Can I request custom features?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+
+                    Absolutely. Custom functionality
+                    can be discussed during the
+                    project discovery process.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question">
+
+                Do you provide maintenance?
+
+                <span>
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+
+                    Yes. Ongoing maintenance and
+                    updates can be arranged after
+                    the project is launched.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
+    <div class="contact-inner">
+
+        <span class="section-number">
+            06 / START A PROJECT
+        </span>
+
+
+        <h2>
+
+            Let's build something
+
+            <span>
+                extraordinary.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Have an idea? Tell us about it
+            and let's turn it into a digital
+            experience.
+
+        </p>
+
+
+        <form id="contactForm">
+
+
+            <div class="input-row">
+
+
+                <div class="input-group">
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="John Doe"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Project Type
+                </label>
+
+                <select
+                    id="project"
+                    required
+                >
+
+                    <option value="">
+                        Select a service
+                    </option>
+
+                    <option>
+                        Website
+                    </option>
+
+                    <option>
+                        Web Application
+                    </option>
+
+                    <option>
+                        UI / UX Design
+                    </option>
+
+                    <option>
+                        AI Solution
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Tell us about your project
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Describe your idea..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="submit-button"
+                type="submit"
+            >
+
+                Send Project Request →
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="#"
+                class="logo"
+            >
+
+                <span class="logo-mark">
+                    &lt;/&gt;
+                </span>
+
+                <span>
+                    CodexNova<span class="dot">.</span>Dev
+                </span>
+
+            </a>
+
+
+            <p>
+
+                Building the digital future,
+                one experience at a time.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <div>
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#pricing">
+                    Pricing
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    WhatsApp
+                </a>
+
+                <a href="#">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CodexNova.Dev
+        </span>
+
+        <span>
+            Designed & Built with code.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Message prepared successfully.
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+/* =========================================
+   MOBILE NAV
+========================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuButton.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    menuButton.textContent =
+        navLinks.classList.contains("active")
+            ? "✕"
+            : "☰";
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuButton.textContent = "☰";
+
+    });
+
+});
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+
+faqItems.forEach(item => {
+
+    const question =
+        item.querySelector(".faq-question");
+
+
+    question.addEventListener("click", () => {
+
+        const active =
+            item.classList.contains("active");
+
+
+        faqItems.forEach(other => {
+
+            other.classList.remove("active");
+
+            other.querySelector(
+                ".faq-answer"
+            ).style.maxHeight = null;
+
+        });
+
+
+        if (!active) {
+
+            item.classList.add("active");
+
+            const answer =
+                item.querySelector(".faq-answer");
+
+            answer.style.maxHeight =
+                answer.scrollHeight + "px";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const toast =
+    document.getElementById("toast");
+
+
+contactForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
+
+
+        const email =
+            document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+        const project =
+            document
+            .getElementById("project")
+            .value;
+
+
+        const message =
+            document
+            .getElementById("message")
+            .value
+            .trim();
+
+
+        if (
+            !name ||
+            !email ||
+            !project ||
+            !message
+        ) {
+
+            showToast(
+                "Please complete all fields."
+            );
+
+            return;
+
+        }
+
+
+        /*
+        =====================================
+        CHANGE THIS NUMBER
+        =====================================
+
+        Replace with your real WhatsApp
+        business number.
+
+        Example:
+
+        2348012345678
+        */
+
+        const whatsappNumber =
+            "2348000000000";
+
+
+        const whatsappMessage =
+
+`Hello CodexNova.Dev,
+
+My name is ${name}.
+
+Email: ${email}
+
+Project Type: ${project}
+
+Project Details:
+${message}`;
+
+
+        const whatsappURL =
+            `https://wa.me/${whatsappNumber}?text=${
+                encodeURIComponent(
+                    whatsappMessage
+                )
+            }`;
+
+
+        showToast(
+            "Opening WhatsApp..."
+        );
+
+
+        setTimeout(() => {
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        },700);
+
+
+        contactForm.reset();
+
+    }
+);
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+function showToast(message) {
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, " +
+        ".project-card, " +
+        ".price-card, " +
+        ".about-content, " +
+        ".about-visual"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry.target.style.opacity =
+                        "1";
+
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+
+    element.style.transform =
+        "translateY(30px)";
+
+    element.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+    observer.observe(element);
+
+});
+
+
+/* =========================================
+   HERO MOUSE PARALLAX
+========================================= */
+
+const heroVisual =
+    document.querySelector(".hero-visual");
+
+
+if (heroVisual) {
+
+    heroVisual.addEventListener(
+        "mousemove",
+        event => {
+
+            const rect =
+                heroVisual.getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const rotateY =
+                ((x / rect.width) - .5) * 10;
+
+
+            const rotateX =
+                ((y / rect.height) - .5) * -10;
+
+
+            const card =
+                heroVisual.querySelector(
+                    ".main-card"
+                );
+
+
+            card.style.transform =
+                `perspective(1000px)
+                 rotateY(${rotateY}deg)
+                 rotateX(${rotateX}deg)`;
+
+        }
+    );
+
+
+    heroVisual.addEventListener(
+        "mouseleave",
+        () => {
+
+            const card =
+                heroVisual.querySelector(
+                    ".main-card"
+                );
+
+
+            card.style.transform =
+                "perspective(1000px) " +
+                "rotateY(-8deg) " +
+                "rotateX(5deg)";
+
+        }
+    );
+
+}
+
+</script>
+
+</body>
+</html>
